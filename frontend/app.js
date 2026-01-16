@@ -31,7 +31,9 @@ let currentDate = new Date().toISOString().slice(0,10); // yyyy-mm-dd
 datePicker.value = currentDate;
 
 // --- Helpers ---
-function format(n){ return Number(n).toFixed(2); }
+function format(n){
+  return Number(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
 function showAdd(){ addOverlay.classList.remove("hidden"); }
 function hideAdd(){ addOverlay.classList.add("hidden"); addItem.value=""; addQty.value=""; addInvestment.value=""; addPrice.value=""; }
 function showData(){ dataOverlay.classList.remove("hidden"); }
@@ -173,4 +175,5 @@ btnDownload.onclick = async () => {
 };
 
 // --- Init ---
+
 loadForDate(currentDate);
