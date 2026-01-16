@@ -1,94 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tl">
 <head>
   <meta charset="UTF-8" />
-  <title>DAIHO DAILY SALES REPORT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Daiho Auto Supply</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="topbar">
-    <h1>DAIHO DAILY SALES REPORT</h1>
-    <div class="controls">
-      <button id="btnAddSale" class="btn primary">ADD</button>
+    <div class="left">
+      DAIHO DAILY SALES REPORT
+    </div>
+    <div class="right">
+      <button id="btnAddSale" class="btn">ADD</button>
       <button id="btnData" class="btn">DATA</button>
-      <input type="date" id="datePicker" />
       <button id="btnDownload" class="btn">Download</button>
+      <input type="date" id="datePicker" />
     </div>
   </header>
 
-  <main>
+  <!-- Main content -->
+  <main class="container">
+    <!-- Table -->
     <section class="table-wrap">
       <table id="saleTable">
         <thead>
           <tr>
-            <th class="qty-col">Qty</th>
-            <th class="item-col">Item</th>
+            <th>Qty</th>
+            <th>Item</th>
             <th>Investment</th>
             <th>Price</th>
             <th>Total</th>
             <th>Profit</th>
-            <th class="action-col">Action</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody id="saleBody">
-          <!-- rows injected by JS -->
+          <!-- Rows injected by JS -->
         </tbody>
       </table>
     </section>
 
-    <section class="totals">
-      <div><strong>Total Sale:</strong> <span id="grossSale">0.00</span></div>
-      <div><strong>Total Investment:</strong> <span id="totalCost">0.00</span></div>
-      <div><strong>Total Profit:</strong> <span id="totalProfit">0.00</span></div>
+    <!-- Totals -->
+    <section class="totals-boxes">
+      <div class="total-box">
+        <label>Total Sale:</label>
+        <span id="grossSale">0.00</span>
+      </div>
+      <div class="total-box">
+        <label>Total Investment:</label>
+        <span id="totalCost">0.00</span>
+      </div>
+      <div class="total-box">
+        <label>Total Profit:</label>
+        <span id="totalProfit">0.00</span>
+      </div>
     </section>
   </main>
 
-  <!-- Add Sale overlay -->
+  <!-- Add Sale Modal -->
   <div id="addOverlay" class="overlay hidden">
     <div class="modal">
       <h2>Add Sale</h2>
       <div class="form-grid">
         <label>Item
-          <input type="text" id="addItem" placeholder="Item name" />
+          <input type="text" id="addItem" required />
         </label>
         <label>Quantity
-          <input type="number" id="addQty" min="1" step="1" />
+          <input type="number" id="addQty" min="1" step="1" required />
         </label>
         <label>Investment
-          <input type="number" id="addInvestment" min="0" step="0.01" />
+          <input type="number" id="addInvestment" min="0" step="0.01" required />
         </label>
         <label>Price
-          <input type="number" id="addPrice" min="0" step="0.01" />
+          <input type="number" id="addPrice" min="0" step="0.01" required />
         </label>
       </div>
       <div class="modal-actions">
-        <button id="confirmAdd" class="btn primary">Add</button>
-        <button id="cancelAdd" class="btn">Cancel</button>
+        <button type="button" id="confirmAdd" class="btn primary">Add</button>
+        <button type="button" id="cancelAdd" class="btn">Cancel</button>
       </div>
     </div>
   </div>
 
-  <!-- DATA overlay -->
+  <!-- DATA Modal -->
   <div id="dataOverlay" class="overlay hidden">
     <div class="modal">
       <h2>DATA Entry</h2>
       <div class="form-grid">
         <label>Item
-          <input type="text" id="dataItem" placeholder="Item (label)" />
+          <input type="text" id="dataItem" required />
         </label>
         <label>Total
-          <input type="number" id="dataTotal" min="0" step="0.01" />
+          <input type="number" id="dataTotal" min="0" step="0.01" required />
         </label>
       </div>
       <div class="modal-actions">
-        <button id="confirmData" class="btn primary">Add DATA</button>
-        <button id="cancelData" class="btn">Cancel</button>
+        <button type="button" id="confirmData" class="btn primary">Add DATA</button>
+        <button type="button" id="cancelData" class="btn">Cancel</button>
       </div>
-      <p class="hint">Note: Quantity, Investment, Price, Profit will be N/A. Row will be blue.</p>
+      <p class="hint">
+        Tpis: Huwag kalimutan lagyan ng total.
+      </p>
     </div>
   </div>
 
-  <script src="./app.js"></script>
+  <!-- JS -->
+  <script src="app.js"></script>
 </body>
 </html>
