@@ -130,6 +130,26 @@ tbody td:nth-child(2) {
   font-weight: 600;
   color: var(--muted);
 }
+
+td:last-child .btn {
+  padding: 4px 8px;   /* mas maliit na size */
+  font-size: 12px;    /* mas maliit na font */
+  border-radius: 4px;
+}
+
+td:last-child .btn-info,
+td:last-child .btn-toggle {
+  background: var(--danger);
+  color: #fff;
+}
+
+td:last-child .btn.info.btn-toggle {
+  background: #4fca4baf;
+  color: #fff;
+}
+
+
+
 #totalProfit {
   color: var(--green);
   font-weight: bold;
@@ -221,9 +241,28 @@ input[type="number"] {
   }
   .table-wrap {
     max-height: 430px;
+    font-size: 12px;
   }
   thead th:nth-child(2),
   tbody td:nth-child(2) {
-    min-width: 280px;
+    min-width: 150px;
+  }
+
+  table th {
+    padding: 5px;
+    position: sticky;
+    top: 0; /* manatili sa itaas */
+    background: var(--card); /* para hindi transparent */
+    text-align: left;
+    padding: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    z-index: 2; /* para laging nasa ibabaw */
+
+  }
+
+  table td {
+    padding: 5px;
   }
 }
