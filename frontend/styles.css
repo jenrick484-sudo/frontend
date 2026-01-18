@@ -131,12 +131,6 @@ tbody td:nth-child(2) {
   color: var(--muted);
 }
 
-td:last-child .btn {
-  padding: 4px 8px;   /* mas maliit na size */
-  font-size: 12px;    /* mas maliit na font */
-  border-radius: 4px;
-}
-
 td:last-child .btn-info,
 td:last-child .btn-toggle {
   background: var(--danger);
@@ -259,7 +253,12 @@ input[type="number"] {
     color: var(--muted);
     border-bottom: 1px solid var(--border);
     z-index: 2; /* para laging nasa ibabaw */
+  }
 
+  td:last-child .btn {
+    padding: 4px 8px;   /* mas maliit na size */
+    font-size: 12px;    /* mas maliit na font */
+    border-radius: 4px;
   }
 
   table td {
