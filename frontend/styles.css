@@ -89,6 +89,36 @@ table {
   border-collapse: collapse;
   min-width: 600px;
 }
+
+.loading {
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Spinner circle */
+.spinner {
+  margin: 0 auto 0.5rem;
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation keyframes */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}
+
 thead th {
   text-align: left;
   padding: 0.75rem;
@@ -96,6 +126,20 @@ thead th {
   color: var(--muted);
   border-bottom: 1px solid var(--border);
 }
+
+table th {
+  padding: 5px;
+  position: sticky;
+  top: 0; /* manatili sa itaas */
+  background: var(--card); /* para hindi transparent */
+  text-align: left;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  z-index: 2; /* para laging nasa ibabaw */
+}
+
 tbody td {
   padding: 0.75rem;
   border-bottom: 1px solid var(--border);
@@ -237,22 +281,10 @@ input[type="number"] {
     max-height: 430px;
     font-size: 12px;
   }
+
   thead th:nth-child(2),
   tbody td:nth-child(2) {
     min-width: 150px;
-  }
-
-  table th {
-    padding: 5px;
-    position: sticky;
-    top: 0; /* manatili sa itaas */
-    background: var(--card); /* para hindi transparent */
-    text-align: left;
-    padding: 0.75rem;
-    font-weight: 600;
-    color: var(--muted);
-    border-bottom: 1px solid var(--border);
-    z-index: 2; /* para laging nasa ibabaw */
   }
 
   td:last-child .btn {
