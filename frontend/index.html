@@ -22,6 +22,10 @@
 
   <!-- Main content -->
   <main class="container">
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Loading data...... (wait for a while) <br> Hulati rana boss kay ng reload pa ang data</p>
+    </div>
     <!-- Table -->
     <section class="table-wrap">
       <table id="saleTable">
@@ -65,43 +69,46 @@
       <h2>Add Sale</h2>
       <div class="form-grid">
         <label>Item
-          <input type="text" id="addItem" required />
+          <input placeholder="Ngalan sa piyesa" type="text" id="addItem" required />
         </label>
         <label>Quantity
-          <input type="number" id="addQty" min="1" step="1" required />
+          <input placeholder="Pila kabook paliton" type="number" id="addQty" min="1" step="1" required />
         </label>
         <label>Investment
-          <input type="number" id="addInvestment" min="0" step="0.01" required />
+          <input placeholder="Tag pila ang puhunan" type="number" id="addInvestment" min="0" step="0.01" required />
         </label>
         <label>Price
-          <input type="number" id="addPrice" min="0" step="0.01" required />
+          <input placeholder="Tag pila ang isa" type="number" id="addPrice" min="0" step="0.01" required />
         </label>
       </div>
       <div class="modal-actions">
-        <button type="button" id="confirmAdd" class="btn primary">Add</button>
+        <button type="button" id="confirmAdd" class="btn primary">Add Sale</button>
         <button type="button" id="cancelAdd" class="btn">Cancel</button>
       </div>
+      <p class="hint">
+        Develop by Jenrick Monte - Web developer.
+      </p>
     </div>
   </div>
 
   <!-- DATA Modal -->
   <div id="dataOverlay" class="overlay hidden">
     <div class="modal">
-      <h2>DATA Entry</h2>
+      <h2>Add Data</h2>
       <div class="form-grid">
         <label>Item
-          <input type="text" id="dataItem" required />
+          <input placeholder="Ngalan sa mubayad" type="text" id="dataItem" required />
         </label>
         <label>Total
-          <input type="number" id="dataTotal" min="0" step="0.01" required />
+          <input placeholder="Pila iyang i DATA" type="number" id="dataTotal" min="0" step="0.01" required />
         </label>
       </div>
       <div class="modal-actions">
-        <button type="button" id="confirmData" class="btn primary">Add DATA</button>
+        <button type="button" id="confirmData" class="btn primary">Add Data</button>
         <button type="button" id="cancelData" class="btn">Cancel</button>
       </div>
       <p class="hint">
-        Tpis: Huwag kalimutan lagyan ng total.
+        Develop by Jenrick Monte - Web developer.
       </p>
     </div>
   </div>
