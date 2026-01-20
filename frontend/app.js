@@ -103,10 +103,12 @@ function renderTotals(t){
 
 // --- Load data for date ---
 async function loadForDate(dateStr){
+  document.getElementById("loading").classList.remove("hidden"); // show loading
   const res = await fetch(`${API_BASE}/sales?date=${dateStr}`);
   const data = await res.json();
   renderRows(data.rows);
   renderTotals(data.totals);
+  document.getElementById("loading").classList.add("hidden"); // hide loading
 }
 
 // --- Add sale ---
@@ -177,3 +179,4 @@ btnDownload.onclick = async () => {
 // --- Init ---
 
 loadForDate(currentDate);
+
