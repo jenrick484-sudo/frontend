@@ -63,29 +63,30 @@ function hideEditData(){ editDataOverlay.classList.add("hidden"); currentRowId=n
 
 // Row template
 function rowTemplate(r){
-  const isData = r.type==="DATA";
-  const isReturned = r.status==="RETURNED";
-  const qty = isData?"N/A":r.qty;
-  const inv = isData?"N/A":format(r.investment);
-  const price = isData?"N/A":format(r.price);
+  const isData = r.type === "DATA";
+  const isReturned = r.status === "RETURNED";
+  const qty = isData ? "N/A" : r.qty;
+  const inv = isData ? "N/A" : format(r.investment);
+  const price = isData ? "N/A" : format(r.price);
   const total = format(r.total);
-  const profit = isData?"N/A":format(r.profit);
+  const profit = isData ? "N/A" : format(r.profit);
 
-  const tr=document.createElement("tr");
-  if(isData) tr.classList.add("row-data");
-  if(isReturned) tr.classList.add("row-returned");
+  const tr = document.createElement("tr");
+  if (isData) tr.classList.add("row-data");
+  if (isReturned) tr.classList.add("row-returned");
 
-  // dynamic button label
+  // dynamic button label and class
   const btnLabel = isReturned ? "Restore" : "Edit";
+  const btnClass = isReturned ? "btn btn-edit btn-restore" : "btn btn-edit";
 
-  tr.innerHTML=`
+  tr.innerHTML = `
     <td>${qty}</td>
     <td>${r.item}</td>
     <td>${inv}</td>
     <td>${price}</td>
     <td>${total}</td>
     <td>${profit}</td>
-    <td><button class="btn btn-edit" data-id="${r.id}" data-type="${r.type}" data-status="${r.status}">${btnLabel}</button></td>
+    <td><button class="${btnClass}" data-id="${r.id}" data-type="${r.type}" data-status="${r.status}">${btnLabel}</button></td>
   `;
   return tr;
 }
@@ -253,5 +254,6 @@ btnDownload.onclick = async () => {
 // --- Init ---
 
 loadForDate(currentDate);
+
 
 
