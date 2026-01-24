@@ -113,10 +113,10 @@
     </div>
   </div>
 
-    <!-- Edit Modal (default hidden) -->
+  <!-- Edit Modal (default hidden) -->
   <div id="editOverlay" class="overlay hidden">
     <div class="modal">
-      <h2>Edit Entry</h2>
+      <h2>Edit Sale</h2>
       <div class="form-grid">
         <label>Item <input type="text" id="editItem" /></label>
         <label>Quantity <input type="number" id="editQty" min="1" step="1" /></label>
@@ -124,19 +124,22 @@
         <label>Price <input type="number" id="editPrice" min="0" step="0.01" /></label>
       </div>
       <div class="modal-actions">
-        <button type="button" id="confirmEdit" class="btn primary">Edit</button>
+        <button type="button" id="confirmEdit" class="btn primary">Save</button>
         <button type="button" id="returnEdit" class="btn danger">Return</button>
         <button type="button" id="deleteEdit" class="btn danger">Delete</button>
         <button type="button" id="cancelEdit" class="btn">Cancel</button>
       </div>
-      <p class="hint">Edit workflow for SALE/DATA rows.</p>
+      <p class="hint">
+        Note: New patch and updated Action<br>Resturn - pareha sa una, once you click mahimong red ang row OK.<br>Delete - Once you click, automatic mawala and row sa table maong be careful OK.<br>Save - pwede ma edit ang Item, Qty, Investment og Price (kung naa man gali sayup) once you click save, automatic change ang table row OK.<br><br>Tips : naay nipalit sure brake isa, taod taod naa napoy ni palit sure brake (buhaton) ayaw na pag add sale pagitaa sa table ang sure brake = Edit > change Qty > Save. - makes your data clear and organized.
+
+      </p>
     </div>
   </div>
 
   <!-- Edit DATA Modal -->
   <div id="editDataOverlay" class="overlay hidden">
     <div class="modal">
-      <h2>Edit Data Entry</h2>
+      <h2>Edit Data</h2>
       <div class="form-grid">
         <label>Item
           <input type="text" id="editDataItem" />
@@ -146,10 +149,13 @@
         </label>
       </div>
       <div class="modal-actions">
-        <button type="button" id="confirmEditData" class="btn primary">Edit</button>
+        <button type="button" id="confirmEditData" class="btn primary">Save</button>
         <button type="button" id="deleteEditData" class="btn danger">Delete</button>
         <button type="button" id="cancelEditData" class="btn">Cancel</button>
       </div>
+      <p class="hint">
+        Note: New patch and updated Action<br>Delete - Once you click, automatic mawala and row sa table maong be careful OK.<br>Save - pwede ma edit ang Item og Total (kung naa man gali sayup) once you click save, automatic change ang table row OK.
+      </p>
     </div>
   </div>
 
@@ -157,4 +163,5 @@
   <script src="app.js"></script>
 </body>
 </html>
+
 
