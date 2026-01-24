@@ -56,16 +56,29 @@ input[type="date"] {
   color: var(--text);
 }
 .btn {
-  background: var(--primary);
-  color: var(--text);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
+  background: #235e81;
+  color: var(--text); 
+  border: none; 
+  padding: 0.5rem 1rem; 
+  border-radius: 0.4rem; 
+  cursor: pointer; 
   font-weight: 500;
 }
-.btn:hover {
-  background: #0ea5e9;
+
+.btn:hover { 
+  background: #315c7675; 
+}
+
+.btn.danger { 
+  background: var(--danger); 
+}
+
+.btn.primary { 
+  background: var(--green); 
+}
+
+.btn-restore {
+  background-color: var(--green);
 }
 
 /* Container */
@@ -204,6 +217,14 @@ td:last-child .btn.info.btn-toggle {
 }
 
 /* Modals */
+#editDataOverlay .modal h2 {
+  color: var(--primary);
+}
+
+#editOverlay .modal h2 {
+  color: var(--primary);
+}
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -297,3 +318,4 @@ input[type="number"] {
     padding: 5px;
   }
 }
+
