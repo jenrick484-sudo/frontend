@@ -113,7 +113,48 @@
     </div>
   </div>
 
+    <!-- Edit Modal (default hidden) -->
+  <div id="editOverlay" class="overlay hidden">
+    <div class="modal">
+      <h2>Edit Entry</h2>
+      <div class="form-grid">
+        <label>Item <input type="text" id="editItem" /></label>
+        <label>Quantity <input type="number" id="editQty" min="1" step="1" /></label>
+        <label>Investment <input type="number" id="editInvestment" min="0" step="0.01" /></label>
+        <label>Price <input type="number" id="editPrice" min="0" step="0.01" /></label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="confirmEdit" class="btn primary">Edit</button>
+        <button type="button" id="returnEdit" class="btn danger">Return</button>
+        <button type="button" id="deleteEdit" class="btn danger">Delete</button>
+        <button type="button" id="cancelEdit" class="btn">Cancel</button>
+      </div>
+      <p class="hint">Edit workflow for SALE/DATA rows.</p>
+    </div>
+  </div>
+
+  <!-- Edit DATA Modal -->
+  <div id="editDataOverlay" class="overlay hidden">
+    <div class="modal">
+      <h2>Edit Data Entry</h2>
+      <div class="form-grid">
+        <label>Item
+          <input type="text" id="editDataItem" />
+        </label>
+        <label>Total
+          <input type="number" id="editDataTotal" min="0" step="0.01" />
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="confirmEditData" class="btn primary">Edit</button>
+        <button type="button" id="deleteEditData" class="btn danger">Delete</button>
+        <button type="button" id="cancelEditData" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <!-- JS -->
   <script src="app.js"></script>
 </body>
 </html>
+
